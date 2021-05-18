@@ -38,6 +38,7 @@ if __name__ == "__main__":
     valid_df = valid_df[train_df.columns]
 
     label_encoders = {}
+    print(train_df.head())
     for c in train_df.columns:
         lbl = preprocessing.LabelEncoder()
         # join data to have full information about possible labels
@@ -46,6 +47,10 @@ if __name__ == "__main__":
         valid_df.loc[:,c] = lbl.transform(valid_df[c].values.tolist())
         label_encoders[c] = lbl
 
+    print(train_df.columns)
+    print(train_df.head())
+    train_df['days'] = train_df['month'] * 30 + train_df['day']
+    exit()
     # data is ready to train
 
     clf = dispatcher.MODELS[MODEL]
