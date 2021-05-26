@@ -63,7 +63,7 @@ if __name__ =="__main__":
     y_true = [ 0, 0, 1, 0, 1, 1, 0]
     y_pred = [ 0, 0, 1, 0, 1, 1, 1]
     y_prob = [.1,.1,.5,.2,.6,.7,.8]
-    # y_prob = [.5,.5,.5,.5,.5,.5,.5]
+    # y_prob = [.5,.5,.5,.5,.5,.5,.5 ]
     cm  = ClassificationMetrics()
     for metric in cm.metrics.keys():
         print(metric, cm(metric, y_true,y_pred, y_proba=y_prob))
